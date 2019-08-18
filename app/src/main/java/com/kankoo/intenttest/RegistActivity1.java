@@ -25,5 +25,16 @@ public class RegistActivity1 extends AppCompatActivity {
             }
         });
 
+        //RegistActivity_auth 화면으로 전환
+        Button EmailAuth = (Button) findViewById(R.id.btnEmailAuth);
+        EmailAuth.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(getApplicationContext(), RegistActivity1_auth.class);
+                startActivityForResult(Intent, 100);
+            }
+        });
+
     }
 }
