@@ -50,16 +50,14 @@
     <Button
         android:id="@+id/btnLogin"
         style="?android:attr/buttonStyleSmall"
-        android:layout_width="74dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btnRegist"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginBottom="0dp"
-        android:layout_toEndOf="@+id/btnRegist"
-        android:layout_toRightOf="@+id/btnRegist"
+        android:layout_below="@+id/etPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="195dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="160dp"
         android:text="로그인" />
 
 </RelativeLayout>
