@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(getApplicationContext(), SubActivity.class);
+                Intent Intent = new Intent(getApplicationContext(), RegistChoose.class);
                 startActivityForResult(Intent, 100);
             }
         });
