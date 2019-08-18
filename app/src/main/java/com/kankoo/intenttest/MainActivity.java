@@ -1,0 +1,32 @@
+package com.kankoo.intenttest;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //회원가입 선택화면으로 전환
+        Button ChsRegist = (Button) findViewById(R.id.btnRegist);
+        ChsRegist.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(getApplicationContext(), SubActivity.class);
+                startActivityForResult(Intent, 100);
+            }
+        });
+
+        //로그인 검증화면으로 전환
+
+
+    }
+}
