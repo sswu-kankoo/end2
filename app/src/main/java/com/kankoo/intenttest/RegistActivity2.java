@@ -27,3 +27,6 @@ public class RegistActivity2 extends AppCompatActivity {
 
     }
 }
+
+
+//입력받은 정보 디비에 저장하는 코드 쓰기

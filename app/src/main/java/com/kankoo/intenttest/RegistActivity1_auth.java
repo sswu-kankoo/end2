@@ -26,6 +26,8 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
+
+
 public class RegistActivity1_auth extends AppCompatActivity implements View.OnClickListener, Dialog.OnCancelListener {
 
     final int randomNum = 106254; //테스트할 6자리 인증번호
@@ -103,10 +105,21 @@ public class RegistActivity1_auth extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
+        try {
+            SendMail sender = new SendMail("username@gmail.com", "password");
+            sender.sendMail1("This is Subject",
+                    "This is Body",
+                    "user@gmail.com",
+                    "user@yahoo.com");
+        } catch (Exception e) {
+            Log.e("SendMail", e.getMessage(), e);
+        }
 
         switch (v.getId()){
 
             case R.id.btnSendAuthNum :
+
+                //여기에 서버 입력된 메일 주소랑 비교 넣기!!
 
                 dialog = LayoutInflater.from(this);
                 dialogLayout = dialog.inflate(R.layout.activity_regist_activity1_auth_dialog, null); // LayoutInflater를 통해 XML에 정의된 Resource들을 View의 형태로 반환 시켜 줌
@@ -133,6 +146,7 @@ public class RegistActivity1_auth extends AppCompatActivity implements View.OnCl
         }
 
     }
+
 
     @Override
     public void onCancel(DialogInterface dialog) {

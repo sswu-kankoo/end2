@@ -38,3 +38,5 @@ public class RegistActivity1 extends AppCompatActivity {
 
     }
 }
+
+//입력 받은 변수들 디비에 저장
