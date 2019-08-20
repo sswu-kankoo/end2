@@ -12,28 +12,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import java.io.ByteArrayInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.Properties;
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.mail.Message;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-
-
 
 public class RegistActivity1_auth extends AppCompatActivity implements View.OnClickListener, Dialog.OnCancelListener {
 
     final int randomNum = 106254; //테스트할 6자리 인증번호
 
     EditText authEmail;
-    Button SendAuthNum;
+    Button btnSendAuthNum;
 
     /*Dialog에 관련된 필드 */
 
@@ -56,8 +41,8 @@ public class RegistActivity1_auth extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_regist_activity1_auth);
 
         authEmail=(EditText)findViewById(R.id.authEmail);
-        SendAuthNum=(Button)findViewById(R.id.btnSendAuthNum);
-        SendAuthNum.setOnClickListener(this);
+        btnSendAuthNum=(Button)findViewById(R.id.btnSendAuthNum);
+        btnSendAuthNum.setOnClickListener(this);
 
 
     }
@@ -100,26 +85,15 @@ public class RegistActivity1_auth extends AppCompatActivity implements View.OnCl
             }
         }.start();
 
-        btnDone.setOnClickListener(this);
+        btnSendAuthNum.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        try {
-            SendMail sender = new SendMail("username@gmail.com", "password");
-            sender.sendMail1("This is Subject",
-                    "This is Body",
-                    "user@gmail.com",
-                    "user@yahoo.com");
-        } catch (Exception e) {
-            Log.e("SendMail", e.getMessage(), e);
-        }
 
         switch (v.getId()){
 
             case R.id.btnSendAuthNum :
-
-                //여기에 서버 입력된 메일 주소랑 비교 넣기!!
 
                 dialog = LayoutInflater.from(this);
                 dialogLayout = dialog.inflate(R.layout.activity_regist_activity1_auth_dialog, null); // LayoutInflater를 통해 XML에 정의된 Resource들을 View의 형태로 반환 시켜 줌
@@ -146,7 +120,6 @@ public class RegistActivity1_auth extends AppCompatActivity implements View.OnCl
         }
 
     }
-
 
     @Override
     public void onCancel(DialogInterface dialog) {
